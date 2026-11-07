@@ -1,0 +1,16 @@
+# 登录态与下载产物，绝不入库
+cookies.txt
+downloads/
+chrome-profile/
+dist/
+
+# 引擎二进制（体积大，首次运行自动下载）
+tools/yt-dlp.exe
+tools/yt-dlp
+tools/ffmpeg.exe
+
+# 杂项
+__pycache__/
+*.pyc
+*.log
+.DS_Store

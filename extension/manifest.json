@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "视频下载器",
+  "version": "1.0.0",
+  "description": "识别当前网页里的视频，一键交给本地下载器保存。",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "cookies",
+    "storage",
+    "scripting",
+    "webRequest",
+    "contextMenus"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "视频下载器"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
